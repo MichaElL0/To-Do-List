@@ -14,12 +14,61 @@
             <h1>To-Do or not</h1>
         </header>
 
-        <nav>
+        <nav class="sidebar">
+            <ul class="filter-list">
+                <li class="filter-item"><button type="button"><img src="./images/calendar-month.svg" alt="All icon">All</button></li>
+                <li class="filter-item"><button type="button"><img src="./images/calendar-today.svg" alt="Today icon">Today</button></li>
+                <li class="filter-item"><button type="button"><img src="./images/calendar-week.svg" alt="Week icon">Week</button></li>
+                <li class="filter-item"><button type="button"><img src="./images/calendar-star.svg" alt="Important icon">Important</button></li>
+                <li class="filter-item"><button type="button"><img src="./images/calendar-check.svg" alt="Completed icon">Completed</button></li>
+            </ul>
 
+            <div class="side-bar-projects">
+                <h2>Projects</h2>
+                <hr>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <button type="button" class="project-select">
+                            <p>Project 33</p>
+                        </button>
+                        <div class="project-buttons">
+                            <button type="button" class="modify-btn">
+                                Modify
+                                <!-- img -->
+                            </button>
+                            <button type="button" class="delete-btn">
+                                Delete
+                                <!-- img -->
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <button type="button" class="project-select">
+                            <p>Project 2</p>
+                        </button>
+                        <div class="project-buttons">
+                            <button type="button" class="modify-btn">
+                                Modify
+                                <!-- img -->
+                            </button>
+                            <button type="button" class="delete-btn">
+                                Delete
+                                <!-- img -->
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button">New Project +</button>
+                    
+                </div>
+            </div>
         </nav>
 
         <main>
-            
+            <div id="task-header">
+                <h2>All Tasks</h2>
+            </div>
         </main>
     </div>
 </body>
