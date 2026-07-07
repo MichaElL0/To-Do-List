@@ -4,6 +4,13 @@
     margin: 0;
     line-height: 1.5;
     font-family: "Elms Sans", sans-serif;
+
+    --Beige: #F9E8A2;
+    --Light-blue: #B4E1EB;
+    --Mid-blue: #95BDD7;
+    --Darker-blue: #78A4CB;
+    --Off-white: #e8ecec;
+
 }
 
 img, picture, video, canvas, svg {
@@ -17,4 +24,33 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--Off-white);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 60px 1fr;
+
+  grid-template-areas: 
+        "header header"
+        "sidebar main";
+}
+
+header {
+  background-color: var(--Darker-blue);
+  color: var(--Off-white);
+  grid-area: header;
+}
+
+.sidebar {
+  background-color: var(--Mid-blue);
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
 }
