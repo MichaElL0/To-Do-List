@@ -58,7 +58,7 @@ header {
   padding: 1rem;
 }
 
-.filter-item button img {
+img[src$=".svg"] {
   width: 24px;
   height: 24px;
   object-fit: contain;
@@ -88,8 +88,9 @@ li {
   list-style-type: none;
 }
 
-.side-bar-projects h2 {
+.side-bar-projects h3 {
   border-bottom: 2px solid var(--Darker-blue);
+  margin: 1rem 0;
 }
 
 main {
@@ -97,3 +98,73 @@ main {
   text-align: center;
   padding: 1rem;
 }
+
+.project-card {
+  background-color: var(--Darker-blue);
+  border-radius: 15px;
+  display: flex;
+  padding: 0.2rem;
+  gap: 2rem;
+  max-width: 320px;
+  position: relative;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.project-select {
+  display: block;
+  width: 100%;
+  border-radius: 9px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.6rem 5.5rem 0.6rem 1rem; 
+  position: relative;
+  z-index: 1;
+}
+
+.project-select:hover {
+  outline: 5px solid var(--Mid-blue);
+}
+
+.project-buttons {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  z-index: 2;
+}
+
+.modify-btn,
+.delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: none;
+    background: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.project-buttons button:hover {
+  outline: 3px solid var(--Mid-blue);
+}
+
+#new-project-btn {
+  margin-top: 1rem;
+}
+
