@@ -65,10 +65,55 @@
             <div id="task-header">
                 <h2>All Tasks</h2>
             </div>
-
+            
             <div class="add-task-container">
                 <button type="button" id="task-btn">Add Task +</button>
             </div>
+
+            <dialog class="add-task-box" open>
+                <form method="dialog">
+                    <label for="title-box">Title:</label>
+                    <input type="text" name="title" id="title-box" required>
+
+                    <label for="description-box">Description:</label>
+                    <textarea name="description" id="description-box" rows="5" cols="10" placeholder="Description of the task ..."></textarea>
+
+                    <label for="date-box">Due date:</label>
+                    <input type="date" name="date" id="date-box" required>
+
+                    <fieldset>
+                        <legend>Priority</legend>
+                        <input type="radio" name="priority" id="high-prio" required>
+                        <label for="high-prio">High priority</label>
+                        <input type="radio" name="priority" id="medium-prio" checked required>
+                        <label for="medium-prio">Medium priority</label>
+                        <input type="radio" name="priority" id="low-prio" required>
+                        <label for="low-prio">Low priority</label>
+                    </fieldset>
+
+                    <div class="project-field">
+                        <label for="project-select">Project:</label>
+                        <select name="projects" id="project-select">
+                            <option value="">--Please choose a project</option>
+                            <option value="project name">Project 33</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" value="add" name="action">Add Task</button>
+                    <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+
+                </form>
+            </dialog>
+
+            <dialog class="add-project-box" open>
+                <form method="dialog">
+                    <label for="project-title">Project title:</label>
+                    <input type="text" name="project-title" id="project-title" required>
+
+                    <button type="submit" value="add" name="action">Add Project</button>
+                    <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+                </form>
+            </dialog>
 
             <ul class="task-list" id="task-list">
 
