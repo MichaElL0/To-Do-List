@@ -333,3 +333,67 @@ main {
 #new-project-btn:hover {
   background-color: var(--Darker-blue);
 }
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-box {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 15px;
+  border: none;
+  /* background-color: var(--Off-white); */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* tight space between label and its input */
+}
+
+.modal-box textarea {
+  resize: none;
+}
+
+.modal-box label, legend {
+  font-weight: 600;
+}
+
+.modal-box input[type="radio"] + label {
+  font-weight: 400;
+}
+
+.modal-box::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.add-task-box {
+  width: 500px;
+}
+
+.add-task-box form, .add-project-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.add-project-box {
+  width: 500px;
+}
+
+.action-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.action-buttons-wrapper > * {
+  flex: 1;
+}

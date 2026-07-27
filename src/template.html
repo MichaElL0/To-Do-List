@@ -70,16 +70,23 @@
                 <button type="button" id="task-btn">Add Task +</button>
             </div>
 
-            <dialog class="add-task-box" open>
+            <dialog class="add-task-box modal-box">
+                <h3>New Task</h3>
                 <form method="dialog">
-                    <label for="title-box">Title:</label>
-                    <input type="text" name="title" id="title-box" required>
+                    <div class="form-field">
+                        <label for="title-box">Title:</label>
+                        <input type="text" name="title" id="title-box" required>
+                    </div>
 
-                    <label for="description-box">Description:</label>
-                    <textarea name="description" id="description-box" rows="5" cols="10" placeholder="Description of the task ..."></textarea>
+                    <div class="form-field">
+                        <label for="description-box">Description:</label>
+                        <textarea name="description" id="description-box" rows="5" cols="10" placeholder="Description of the task..."></textarea>
+                    </div>
 
-                    <label for="date-box">Due date:</label>
-                    <input type="date" name="date" id="date-box" required>
+                    <div class="form-field">
+                        <label for="date-box">Due date:</label>
+                        <input type="date" name="date" id="date-box" required>
+                    </div>
 
                     <fieldset>
                         <legend>Priority</legend>
@@ -92,30 +99,39 @@
                     </fieldset>
 
                     <div class="project-field">
-                        <label for="project-select">Project:</label>
-                        <select name="projects" id="project-select">
-                            <option value="">--Please choose a project</option>
-                            <option value="project name">Project 33</option>
-                        </select>
+                        <div class="form-field">
+                            <label for="project-select">Project:</label>
+                            <select name="projects" id="project-select">
+                                <option value="">--Please choose a project</option>
+                                <option value="project name">Project 33</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <button type="submit" value="add" name="action">Add Task</button>
-                    <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+                    <div class="action-buttons-wrapper">
+                        <button type="submit" value="add" name="action">Add Task</button>
+                        <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+                    </div>
 
                 </form>
             </dialog>
 
-            <dialog class="add-project-box" open>
+            <!-- <dialog class="add-project-box modal-box" >
+                <h3>New Project</h3>
                 <form method="dialog">
-                    <label for="project-title">Project title:</label>
-                    <input type="text" name="project-title" id="project-title" required>
+                    <div class="form-field">
+                        <label for="project-title">Project title:</label>
+                        <input type="text" name="project-title" id="project-title" required>
+                    </div>
 
-                    <button type="submit" value="add" name="action">Add Project</button>
-                    <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+                    <div class="action-buttons-wrapper">
+                        <button type="submit" value="add" name="action">Add Project</button>
+                        <button type="submit" value="cancel" formnovalidate name="action">Cancel</button>
+                    </div>
                 </form>
-            </dialog>
+            </dialog> -->
 
-            <ul class="task-list" id="task-list">
+            <!-- <ul class="task-list" id="task-list">
 
                 <li class="task-item priority-high">
                     <label class="task-checkbox">
@@ -185,7 +201,7 @@
 
                 
 
-            </ul>
+            </ul> -->
         </main>
     </div>
 </body>
