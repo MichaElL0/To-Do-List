@@ -11,6 +11,8 @@
     --Darker-blue: #78A4CB;
     --Off-white: #f5f5f5;
     --Off-black: #242424;
+    --Soft-red: #D97D6C;
+    --Darker-red: #a86155;
 
 }
 
@@ -359,6 +361,7 @@ dialog {
   margin: -2rem -2rem 0 -2rem;
   padding: 1rem 2rem;
   border-radius: 15px 15px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-field {
@@ -427,8 +430,8 @@ input, textarea, select, fieldset {
 }
 
 .modal-box fieldset:focus-within {
-  border-color: var(--Beige);
-  outline: 2px solid var(--Beige);
+  border-color: #0000;
+  outline: 3px solid var(--Beige);
   border-radius: 10px;
 }
 
@@ -448,8 +451,9 @@ fieldset {
   background-color: white;
 }
 
-/* double border inside fieldset - need to fix */
-
+legend {
+  background-color: white;
+}
 
 .radio-wrap {
   display: flex;
@@ -473,4 +477,13 @@ fieldset {
 .action-buttons-wrapper button:hover {
   background-color: var(--Darker-blue);
   transform: scale(1.02);
+}
+
+.action-buttons-wrapper button[value="cancel"] {
+  background-color: var(--Soft-red);
+  border-color: var(--Darker-red);
+}
+
+.action-buttons-wrapper button[value="cancel"]:hover {
+  background-color: var(--Darker-red);
 }
