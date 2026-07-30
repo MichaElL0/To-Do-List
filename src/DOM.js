@@ -3,3 +3,14 @@ export function syncProjectTooltips() {
         p.title = p.textContent;
     });
 }
+
+const addTaskDialog = document.querySelector(".add-task-box");
+const addProjectDialog = document.querySelector(".add-project-box");
+
+export function openAddTaskModal() {
+    addTaskDialog.showModal();
+}
+
+export function openAddProjectModal() {
+    addProjectDialog.showModal();
+}

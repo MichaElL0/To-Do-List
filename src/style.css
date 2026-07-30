@@ -343,7 +343,7 @@ dialog {
   transform: translate(-50%, -50%);
 }
 
-.modal-box {
+.modal-box[open] {
   padding: 2rem;
   display: flex;
   flex-direction: column;
