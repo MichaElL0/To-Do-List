@@ -91,15 +91,15 @@
                     <fieldset>
                         <legend>Priority</legend>
                         <div class="radio-wrap">
-                            <input type="radio" name="priority" id="high-prio" required>
+                            <input type="radio" name="priority" id="high-prio" value="high" required>
                             <label for="high-prio">High priority</label>
                         </div>
                         <div class="radio-wrap">
-                            <input type="radio" name="priority" id="medium-prio" checked required>
+                            <input type="radio" name="priority" id="medium-prio" value="medium" checked required>
                             <label for="medium-prio">Medium priority</label>
                         </div>
                         <div class="radio-wrap">
-                            <input type="radio" name="priority" id="low-prio" required>
+                            <input type="radio" name="priority" id="low-prio" value="low" required>
                             <label for="low-prio">Low priority</label>
                         </div>
                     </fieldset>
@@ -107,9 +107,9 @@
                     <div class="project-field">
                         <div class="form-field">
                             <label for="project-select">Project:</label>
-                            <select name="projects" id="project-select">
+                            <select name="projectName" id="project-select" required>
                                 <option value="">--Please choose a project</option>
-                                <option value="project name">Project 33</option>
+                                <option value="Project 33">Project 33</option>
                             </select>
                         </div>
                     </div>

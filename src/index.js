@@ -1,5 +1,5 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal } from "./DOM.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog } from "./DOM.js";
 
 syncProjectTooltips();
 
@@ -8,3 +8,8 @@ const addProjectButton = document.querySelector("#new-project-btn");
 
 addTaskButton.addEventListener("click", openAddTaskModal);
 addProjectButton.addEventListener("click", openAddProjectModal);
+
+initAddTaskDialog(() => {
+    const taskData = readForm();
+    console.log(taskData);
+})
