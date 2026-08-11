@@ -1,5 +1,5 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog } from "./DOM.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks } from "./DOM.js";
 import { createTask, getAllTasks } from "./taskManager.js";
 
 syncProjectTooltips();
@@ -13,5 +13,6 @@ addProjectButton.addEventListener("click", openAddProjectModal);
 initAddTaskDialog(() => {
     const taskData = readForm();
     createTask(taskData);
+    renderTasks(getAllTasks());
     console.log(getAllTasks());
 });

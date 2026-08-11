@@ -37,6 +37,7 @@ export function initAddTaskDialog(onAdd) {
     addTaskDialog.addEventListener("close", () => {
         if(addTaskDialog.returnValue === "add") {
             onAdd();
+            addTaskForm.reset();
         }
     });
 }
@@ -49,7 +50,9 @@ export function renderTasks(tasks) {
     tasks.forEach(task => {
         const li = document.createElement("li");
         li.className = `task-item priority-${task.priority}`;
-        if( task.completed) li.classList.add("completed");
+        if( task.completed) {
+            li.classList.add("completed");
+        }
 
         const label = document.createElement("label");
         label.className = "task-checkbox";
@@ -57,6 +60,7 @@ export function renderTasks(tasks) {
         const inputCheck = document.createElement("input");
         inputCheck.type = "checkbox"
         inputCheck.name = "task-done"
+        inputCheck.checked = task.completed;
         const checkMarkSpan = document.createElement("span");
         checkMarkSpan.className = "checkmark";
         label.append(inputCheck, checkMarkSpan);
@@ -94,7 +98,7 @@ export function renderTasks(tasks) {
         const deleteImg = document.createElement("img");
         deleteImg.src = "./images/trash-can-outline.svg";
         deleteImg.alt = "Trash can";
-        modifyBtn.appendChild(deleteBtn);
+        deleteBtn.appendChild(deleteImg);
 
         taskList.appendChild(li);
     });
