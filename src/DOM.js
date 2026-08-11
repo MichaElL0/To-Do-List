@@ -15,7 +15,14 @@ export function openAddProjectModal() {
     addProjectDialog.showModal();
 }
 
+const addProjectForm = document.querySelector(".add-project-box form");
+export function readProject() {
+    const formData = new FormData(addProjectForm);
+    return { name: formData.get("project-title") };
+}
+
 const addTaskForm = document.querySelector(".add-task-box form");
+
 export function readForm() {
     const formData = new FormData(addTaskForm);
     let title = formData.get("title");
@@ -38,6 +45,15 @@ export function initAddTaskDialog(onAdd) {
         if(addTaskDialog.returnValue === "add") {
             onAdd();
             addTaskForm.reset();
+        }
+    });
+}
+
+export function initAddProjectDialog(onAdd) {
+    addProjectDialog.addEventListener("close", () => {
+        if(addProjectDialog.returnValue === "add") {
+            onAdd();
+            addProjectForm.reset();
         }
     });
 }
@@ -102,4 +118,10 @@ export function renderTasks(tasks) {
 
         taskList.appendChild(li);
     });
+}
+
+
+
+export function renderProjects() {
+
 }

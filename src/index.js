@@ -1,6 +1,7 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks } from "./DOM.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects } from "./DOM.js";
 import { createTask, getAllTasks } from "./taskManager.js";
+import { createProject, getAllProjects } from "./projectManager.js";
 
 syncProjectTooltips();
 
@@ -15,4 +16,11 @@ initAddTaskDialog(() => {
     createTask(taskData);
     renderTasks(getAllTasks());
     console.log(getAllTasks());
+});
+
+initAddProjectDialog(() => {
+    const projectData = readProject();
+    createProject(projectData.name);
+    renderProjects(getAllProjects());
+    console.log(getAllProjects());
 });
