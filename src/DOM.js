@@ -1,3 +1,6 @@
+import editIcon from "./images/file-document-edit-outline.svg";
+import trashIcon from "./images/trash-can-outline.svg";
+
 export function syncProjectTooltips() {
     document.querySelectorAll(".project-p").forEach(p => {
         p.title = p.textContent;
@@ -121,7 +124,49 @@ export function renderTasks(tasks) {
 }
 
 
+const projectContainer = document.querySelector(".projects-container");
 
-export function renderProjects() {
+export function renderProjects(projects) {
+    projectContainer.textContent = "";
 
+    projects.forEach(project => {
+        const projectCard = document.createElement("div");
+        projectCard.className = "project-card";
+        projectContainer.appendChild(projectCard);
+        
+        const projectSelectBtn = document.createElement("button");
+        projectSelectBtn.type = "button";
+        projectSelectBtn.className = "project-select"
+        projectCard.appendChild(projectSelectBtn);
+        
+        const projectName = document.createElement("p");
+        projectName.title = "";
+        projectName.className = "project-p";
+        projectName.textContent = project.name;
+        projectSelectBtn.appendChild(projectName);
+
+        const projectBtnsContainer = document.createElement("div");
+        projectBtnsContainer.className = "project-buttons";
+        projectCard.appendChild(projectBtnsContainer);
+
+        const modifyButton = document.createElement("button");
+        modifyButton.type = "button";
+        modifyButton.className = "modify-btn";
+        projectBtnsContainer.appendChild(modifyButton);
+
+        const modifyImg = document.createElement("img");
+        modifyImg.src = editIcon;
+        modifyImg.alt = "Project edit icon";
+        modifyButton.appendChild(modifyImg);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "delete-btn";
+        projectBtnsContainer.appendChild(deleteButton);
+
+        const deleteImg = document.createElement("img");
+        deleteImg.src = trashIcon;
+        deleteImg.alt = "Trash can icon";
+        deleteButton.appendChild(deleteImg);
+    });
 }
