@@ -14,14 +14,8 @@ class Task {
 
 const tasks = [];
 
-export function createTask({ title, description, date, priority, projectName}) {
-    const project = findProjectByName(projectName);
-    if(!project) {
-        alert("You have to select project to add task to!");
-        return null;
-    }
-
-    const task = new Task(title, description, date, priority, project.id);
+export function createTask({ title, description, date, priority, projectId}) {
+    const task = new Task(title, description, date, priority, projectId);
     tasks.push(task);
     return task;
 }

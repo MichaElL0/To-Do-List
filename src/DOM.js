@@ -32,14 +32,14 @@ export function readForm() {
     let description = formData.get("description");
     let date = formData.get("date");
     let priority = formData.get("priority");
-    let projectName = formData.get("projectName");
+    let projectId = formData.get("projectName");
 
     return {
         title: title,
         description: description,
         date: date,
         priority: priority,
-        projectName: projectName
+        projectId: projectId
     };
 }
 
@@ -106,7 +106,7 @@ export function renderTasks(tasks) {
         modifyBtn.className = "modify-btn";
         taskBtns.appendChild(modifyBtn);
         const modifyImg = document.createElement("img");
-        modifyImg.src = "./images/file-document-edit-outline.svg";
+        modifyImg.src = editIcon;
         modifyImg.alt = "Task edit";
         modifyBtn.appendChild(modifyImg);
 
@@ -115,7 +115,7 @@ export function renderTasks(tasks) {
         deleteBtn.className = "delete-btn";
         taskBtns.appendChild(deleteBtn);
         const deleteImg = document.createElement("img");
-        deleteImg.src = "./images/trash-can-outline.svg";
+        deleteImg.src = trashIcon;
         deleteImg.alt = "Trash can";
         deleteBtn.appendChild(deleteImg);
 
@@ -168,5 +168,23 @@ export function renderProjects(projects) {
         deleteImg.src = trashIcon;
         deleteImg.alt = "Trash can icon";
         deleteButton.appendChild(deleteImg);
+    });
+}
+
+const projectsSelect = document.querySelector("#project-select");
+
+export function renderProjectOptions(projects) {
+    projectsSelect.textContent = "";
+
+    const placeholderProject = document.createElement("option");
+    placeholderProject.value = "";
+    placeholderProject.textContent = "--Please choose a project";
+    projectsSelect.appendChild(placeholderProject);
+
+    projects.forEach(project => {
+        const projectOption = document.createElement("option");
+        projectOption.value = project.id;
+        projectOption.textContent = `${project.name}`;
+        projectsSelect.appendChild(projectOption);
     });
 }

@@ -13,10 +13,6 @@ export function createProject(name) {
     return project;
 }
 
-export function findProjectByName(name) {
-    return projects.find(p => p.name === name);
-}
-
 export function getAllProjects() {
     return projects;
 }
