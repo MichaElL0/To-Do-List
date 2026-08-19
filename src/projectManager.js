@@ -17,4 +17,10 @@ export function getAllProjects() {
     return projects;
 }
 
+export function deleteProject(id) {
+    const remaining = projects.filter(p => p.id !== id);
+    projects.length = 0;
+    projects.push(...remaining);
+}
+
 createProject("Project 33");

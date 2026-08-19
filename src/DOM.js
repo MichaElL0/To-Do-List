@@ -69,6 +69,7 @@ export function renderTasks(tasks) {
     tasks.forEach(task => {
         const li = document.createElement("li");
         li.className = `task-item priority-${task.priority}`;
+        li.dataset.taskId = task.id;
         if( task.completed) {
             li.classList.add("completed");
         }
@@ -123,8 +124,31 @@ export function renderTasks(tasks) {
     });
 }
 
+export function initTaskListDelegation(onDelete) {
+    taskList.addEventListener("click", e => {
+        const deleteBtn = e.target.closest(".delete-btn");
+        if(!deleteBtn) return;
+
+        const li = deleteBtn.closest("li");
+        const taskId = li.dataset.taskId;
+        onDelete(taskId);
+    });
+}
+
+
 
 const projectContainer = document.querySelector(".projects-container");
+
+export function initProjectListDelegation(onDelete) {
+    projectContainer.addEventListener("click", e => {
+        const deleteBtn = e.target.closest(".delete-btn");
+        if(!deleteBtn) return;
+
+        const div = deleteBtn.closest(".project-card");
+        const projectId = div.dataset.projectId;
+        onDelete(projectId);
+    });
+}
 
 export function renderProjects(projects) {
     projectContainer.textContent = "";
@@ -132,6 +156,7 @@ export function renderProjects(projects) {
     projects.forEach(project => {
         const projectCard = document.createElement("div");
         projectCard.className = "project-card";
+        projectCard.dataset.projectId = project.id;
         projectContainer.appendChild(projectCard);
         
         const projectSelectBtn = document.createElement("button");

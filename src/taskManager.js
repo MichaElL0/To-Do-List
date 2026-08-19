@@ -23,3 +23,9 @@ export function createTask({ title, description, date, priority, projectId}) {
 export function getAllTasks() {
     return tasks;
 }
+
+export function deleteTask(id) {
+    const remaining = tasks.filter(t => t.id !== id);
+    tasks.length = 0;
+    tasks.push(...remaining);
+}

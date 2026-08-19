@@ -1,7 +1,7 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions } from "./DOM.js";
-import { createTask, getAllTasks } from "./taskManager.js";
-import { createProject, getAllProjects } from "./projectManager.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions, initTaskListDelegation, initProjectListDelegation } from "./DOM.js";
+import { createTask, getAllTasks, deleteTask } from "./taskManager.js";
+import { createProject, getAllProjects, deleteProject } from "./projectManager.js";
 
 syncProjectTooltips();
 renderProjectOptions(getAllProjects());
@@ -23,6 +23,17 @@ initAddProjectDialog(() => {
     const projectData = readProject();
     createProject(projectData.name);
     renderProjectOptions(getAllProjects());
+    renderProjects(getAllProjects());
+    console.log(getAllProjects());
+});
+
+initTaskListDelegation((taskId) => {
+    deleteTask(taskId);
+    renderTasks(getAllTasks());
+});
+
+initProjectListDelegation((projectId) => {
+    deleteProject(projectId);
     renderProjects(getAllProjects());
     console.log(getAllProjects());
 });
