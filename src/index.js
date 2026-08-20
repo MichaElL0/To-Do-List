@@ -1,10 +1,36 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions, initTaskListDelegation, initProjectListDelegation } from "./DOM.js";
-import { createTask, getAllTasks, deleteTask } from "./taskManager.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions, initTaskListDelegation, initProjectListDelegation, initTaskCompleteDelegation } from "./DOM.js";
+import { createTask, getAllTasks, deleteTask, toggleTaskComplete } from "./taskManager.js";
 import { createProject, getAllProjects, deleteProject } from "./projectManager.js";
 
 syncProjectTooltips();
 renderProjectOptions(getAllProjects());
+
+createTask({
+    title: "First task",
+    description: "Some description",
+    date: "2026-12-24",
+    priority: "low",
+    projectId: crypto.randomUUID()
+});
+
+createTask({
+    title: "Second more important task",
+    description: "Some description",
+    date: "2026-10-24",
+    priority: "medium",
+    projectId: crypto.randomUUID()
+});
+
+createTask({
+    title: "Last very important task",
+    description: "Some description",
+    date: "2026-09-11",
+    priority: "high",
+    projectId: crypto.randomUUID()
+});
+
+renderTasks(getAllTasks());
 
 const addTaskButton = document.querySelector("#task-btn");
 const addProjectButton = document.querySelector("#new-project-btn");
@@ -36,4 +62,10 @@ initProjectListDelegation((projectId) => {
     deleteProject(projectId);
     renderProjects(getAllProjects());
     console.log(getAllProjects());
+});
+
+initTaskCompleteDelegation((taskId) => {
+    toggleTaskComplete(taskId);
+    renderTasks(getAllTasks());
+    console.log(getAllTasks())
 });

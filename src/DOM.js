@@ -213,3 +213,13 @@ export function renderProjectOptions(projects) {
         projectsSelect.appendChild(projectOption);
     });
 }
+
+export function initTaskCompleteDelegation(onToggle) {
+    taskList.addEventListener("change", e => {
+        if(e.target.type !== "checkbox") return;
+
+        const li = e.target.closest("li");
+        const taskId = li.dataset.taskId;
+        onToggle(taskId);
+    });
+}

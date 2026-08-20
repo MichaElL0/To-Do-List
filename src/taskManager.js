@@ -29,3 +29,9 @@ export function deleteTask(id) {
     tasks.length = 0;
     tasks.push(...remaining);
 }
+
+export function toggleTaskComplete(id) {
+    const task = tasks.find(t => t.id === id); 
+    if(task) task.completed = !task.completed;
+}
+
