@@ -493,3 +493,8 @@ legend {
 .action-buttons-wrapper button[value="cancel"]:hover {
   background-color: var(--Darker-red);
 }
+
+.filter-item button.active{
+  background-color: var(--Darker-blue);
+  color: var(--Off-white);
+}

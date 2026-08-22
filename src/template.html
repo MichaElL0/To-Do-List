@@ -16,32 +16,16 @@
 
         <nav class="sidebar">
             <ul class="filter-list">
-                <li class="filter-item"><button type="button"><img src="./images/calendar-month.svg" alt="All icon">All</button></li>
-                <li class="filter-item"><button type="button"><img src="./images/calendar-today.svg" alt="Today icon">Today</button></li>
-                <li class="filter-item"><button type="button"><img src="./images/calendar-week.svg" alt="Week icon">Week</button></li>
-                <li class="filter-item"><button type="button"><img src="./images/calendar-star.svg" alt="Important icon">Important</button></li>
-                <li class="filter-item"><button type="button"><img src="./images/calendar-check.svg" alt="Completed icon">Completed</button></li>
+                <li class="filter-item"><button type="button" data-filter="all" class="active"><img src="./images/calendar-month.svg" alt="All icon">All</button></li>
+                <li class="filter-item"><button type="button" data-filter="today"><img src="./images/calendar-today.svg" alt="Today icon">Today</button></li>
+                <li class="filter-item"><button type="button" data-filter="week"><img src="./images/calendar-week.svg" alt="Week icon">Week</button></li>
+                <li class="filter-item"><button type="button" data-filter="important"><img src="./images/calendar-star.svg" alt="Important icon">Important</button></li>
+                <li class="filter-item"><button type="button" data-filter="completed"><img src="./images/calendar-check.svg" alt="Completed icon">Completed</button></li>
             </ul>
 
             <div class="side-bar-projects">
                 <h3>Projects</h3>
-                
-                <div class="projects-container">
-                    <div class="project-card">
-                        <button type="button" class="project-select">
-                            <p title="" class="project-p">Project 33</p>
-                        </button>
-                        <div class="project-buttons">
-                            <button type="button" class="modify-btn">
-                                <img src="./images/file-document-edit-outline.svg" alt="Project edit icon">
-                            </button>
-                            <button type="button" class="delete-btn">
-                                <img src="./images/trash-can-outline.svg" alt="Trash can icon">
-                            </button>
-                        </div>
-                    </div>        
-                </div>
-
+                <div class="projects-container"></div>
                 <button type="button" id="new-project-btn">New Project +</button>
                 
             </div>
@@ -123,77 +107,7 @@
                 </form>
             </dialog>
 
-            <ul class="task-list" id="task-list">
-
-                <li class="task-item priority-high">
-                    <label class="task-checkbox">
-                        <input type="checkbox" name="task-done" id="">
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <div class="task-content">
-                        <p class="task-title">Finish todo list layout</p>
-                        <p class="task-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, perspiciatis?</p>
-                        <span class="task-due">Due: Jul 22</span>
-                    </div>
-
-                    <div class="task-buttons">
-                        <button type="button" class="modify-btn">
-                            <img src="./images/file-document-edit-outline.svg" alt="Task edit">
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <img src="./images/trash-can-outline.svg" alt="Trash can">
-                        </button>
-                    </div>
-                </li>
-
-                <li class="task-item priority-medium">
-                    <label class="task-checkbox">
-                        <input type="checkbox" name="task-done" id="">
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <div class="task-content">
-                        <p class="task-title">Finish tasks</p>
-                        <p class="task-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <span class="task-due">Due: Jul 22</span>
-                    </div>
-
-                    <div class="task-buttons">
-                        <button type="button" class="modify-btn">
-                            <img src="./images/file-document-edit-outline.svg" alt="Task edit">
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <img src="./images/trash-can-outline.svg" alt="Trash can">
-                        </button>
-                    </div>
-                </li>
-
-                <li class="task-item priority-low completed">
-                    <label class="task-checkbox">
-                        <input type="checkbox" name="task-done" id="" checked>
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <div class="task-content">
-                        <p class="task-title">Finish tasks</p>
-                        <p class="task-description">Lorem ipsum dolor setur, adipisicing elit.</p>
-                        <span class="task-due">Due: Jul 22</span>
-                    </div>
-
-                    <div class="task-buttons">
-                        <button type="button" class="modify-btn">
-                            <img src="./images/file-document-edit-outline.svg" alt="Task edit">
-                        </button>
-                        <button type="button" class="delete-btn">
-                            <img src="./images/trash-can-outline.svg" alt="Trash can">
-                        </button>
-                    </div>
-                </li>
-
-                
-
-            </ul>
+            <ul class="task-list" id="task-list"></ul>
         </main>
     </div>
 </body>

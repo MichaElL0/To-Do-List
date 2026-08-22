@@ -47,8 +47,8 @@ export function initAddTaskDialog(onAdd) {
     addTaskDialog.addEventListener("close", () => {
         if(addTaskDialog.returnValue === "add") {
             onAdd();
-            addTaskForm.reset();
         }
+        addTaskForm.reset();
     });
 }
 
@@ -56,8 +56,8 @@ export function initAddProjectDialog(onAdd) {
     addProjectDialog.addEventListener("close", () => {
         if(addProjectDialog.returnValue === "add") {
             onAdd();
-            addProjectForm.reset();
         }
+        addProjectForm.reset();
     });
 }
 
@@ -221,5 +221,17 @@ export function initTaskCompleteDelegation(onToggle) {
         const li = e.target.closest("li");
         const taskId = li.dataset.taskId;
         onToggle(taskId);
+    });
+}
+
+const filterList = document.querySelector(".filter-list");
+export function initFilterTasks(onClickFilter) {
+    filterList.addEventListener("click", e => {
+        let buttonClicked = e.target.closest("button");
+        if(!buttonClicked) return;
+        filterList.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+        buttonClicked.classList.add("active");
+        let filterType = buttonClicked.dataset.filter;
+        onClickFilter(filterType);
     });
 }

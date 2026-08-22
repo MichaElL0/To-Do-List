@@ -22,5 +22,3 @@ export function deleteProject(id) {
     projects.length = 0;
     projects.push(...remaining);
 }
-
-createProject("Project 33");

@@ -1,10 +1,9 @@
 import "./style.css";
-import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions, initTaskListDelegation, initProjectListDelegation, initTaskCompleteDelegation } from "./DOM.js";
-import { createTask, getAllTasks, deleteTask, toggleTaskComplete } from "./taskManager.js";
+import { syncProjectTooltips, openAddProjectModal, openAddTaskModal, readForm, initAddTaskDialog, renderTasks, initAddProjectDialog, readProject, renderProjects, renderProjectOptions, initTaskListDelegation, initProjectListDelegation, initTaskCompleteDelegation, initFilterTasks } from "./DOM.js";
+import { createTask, getAllTasks, deleteTask, toggleTaskComplete, getFilteredTasks } from "./taskManager.js";
 import { createProject, getAllProjects, deleteProject } from "./projectManager.js";
 
 syncProjectTooltips();
-renderProjectOptions(getAllProjects());
 
 createTask({
     title: "First task",
@@ -30,7 +29,11 @@ createTask({
     projectId: crypto.randomUUID()
 });
 
+createProject("Sample task");
+renderProjects(getAllProjects());
+
 renderTasks(getAllTasks());
+renderProjectOptions(getAllProjects());
 
 const addTaskButton = document.querySelector("#task-btn");
 const addProjectButton = document.querySelector("#new-project-btn");
@@ -68,4 +71,8 @@ initTaskCompleteDelegation((taskId) => {
     toggleTaskComplete(taskId);
     renderTasks(getAllTasks());
     console.log(getAllTasks())
+});
+
+initFilterTasks((filterType) => {
+    renderTasks(getFilteredTasks(filterType));
 });
